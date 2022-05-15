@@ -1,0 +1,59 @@
+Django reference:
+
+ 
+   1. Once we created a app then place that in the settings.py file INSTLLED_APPS=[]
+   2. IF we create a Model(which refers to a table in database contains fields and behaviours) to create a migration file
+ run 
+1."python manage.py makemigrations"
+2."python manage.py migrate"
+3.sqlite3  db.sqlite3 (to check the tables in the database)
+
+   
+MODEL:
+   
+   1. It is subclass of django.db.model.Model. it will bind the columns of database table with the class fields
+   2. Provide a connection to the database :
+          Inside the settings.py we can see the Database dictionary where there django had a default mysqllite db
+          we can overwrite it with our Db details in the same place and then run the 
+          Connect our own database in django :
+
+      1. pip install mysqlclient
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'your_database_name', # example - blog_data
+        'USER': 'your_mysql_user',
+        'PASSWORD': 'your_mysql_password',
+        'HOST': 'localhost',
+        'PORT': '3360', 
+  3. create a migration files which makes ur model class to connect and craete in db 
+       1."python manage.py makemigrations"
+       2."python manage.py migrate"
+
+VIEW:
+
+  1. It is a place where we write our code (business logic) and return a response to the user (template) 
+     
+  2. we can restrict the method access using the decorators django.views.decorators.http import require_http_methods
+     steps:
+         we need to create the views in the views.py of the application and then we need to 
+         add the url path in url.py file 
+
+Template:
+
+   1. This are the HTML pages which we can add dynamic pages using the template engine of django
+   Steps:
+       1. create a folder called template under the application folder
+       2. create the html pages under these folder 
+       3. Inside settings.py file under the Installed app dictionary add the application name we created
+       4. In view section we need to import from django.template import loader and call the loader.get_template("").render(#context)
+       5. add the path in the url.py 
+                      
+Staticfiles:
+
+   1. we can have static files (like js,css,images) that is managed easily by placing django.contrib.staticfiles in the Installed APP section
+     STATIC_URL = '/static/' in setting.py
+
+          and inside the file of HTML using the template {% load static %} for the images
+                                     <script src="{% 'static', 'js/script.js' %}" type='text/javascript' ></script>
+                                                             (path to the file)
+                                     <link href="{% 'static', 'css/label.css'}" rel='stylesheet'>
+                  
