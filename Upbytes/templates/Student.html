@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Details</title>
+</head>
+<style>
+.form{
+    position:absolute;
+    top:15%;
+    left:55%;
+    right:10%;
+    bottom:30%;
+    }
+.head{
+position:absolute;
+    top:5%;
+    left:10%;
+
+}
+</style>
+<body bgcolor="#EDB7C7">
+<h1 class="head" style="color:green"> Welcome to Django World!</h1>
+<form class="form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">
+    <button type="submit" class="save btn btn-default">Save</button>
+</form>
+{% load static %}
+<img src="{% static '/background.jfif' %}" alt="bg" width="1250" height="580" />
+</body>
+</html>

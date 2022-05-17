@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.hello),
     path('show/', views.super_man),
-    path('first_template/', views.first_template),
+    path('auto_template/', views.auto_template),
+    path('student/', views.stud_form),
 ]

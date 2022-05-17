@@ -55,5 +55,11 @@ Staticfiles:
           and inside the file of HTML using the template {% load static %} for the images
                                      <script src="{% 'static', 'js/script.js' %}" type='text/javascript' ></script>
                                                              (path to the file)
-                                     <link href="{% 'static', 'css/label.css'}" rel='stylesheet'>
+                                     <link href="{% 'static', 'css/label.css'}" rel='stylesheet'> 
+MODEL FORM:
+ 
+   1. It will help to create a HTML form using Model class (It comes under the from django import form)
+
+     {{ form.as_p }}  declared under the form tag
+DJANGO FORM:
                   

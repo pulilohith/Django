@@ -13,9 +13,22 @@
   top: 8px;
   left: 16px;
 }
+ .Middle{
+ position: absolute;
+ top: 40%;
+ left: 50%;
+ right: 50%;
+ bottom: 50%;
+ }
 </style>
 <body >
 <h1 class="top-left"> Welcome to {{ name }}! </h1>
-<img src="{% static '/background.jfif' %}" alt="My image" style="height:;max-width:100%;"/>
+<img src="{% static '/background.jfif' %}" alt="My image" style="height:90%;max-width:90%;"/>
+
+<form class="Middle" method="POST" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+</form>
 </body>
 </html>
